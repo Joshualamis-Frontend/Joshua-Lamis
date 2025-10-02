@@ -1,6 +1,6 @@
         const projects = [
             {
-                title: 'Web Development Project',
+                title: 'Php, MySQL, HTML, CSS, JavaScript, Bootstrap',
                 description: 'WEB-BASE APPLICATION AND MONITORING SYSTEM FOR THE GOVERNMENT HOUSING PROJECT',
                 cover: 'images/8.png',
                 images: [
@@ -18,7 +18,7 @@
                 ]
             },
             {
-                title: 'Mobile App Development Project',
+                title: 'React Native , MongoDB Native Wind',
                 description: 'KARGAMOTO ANGKAS MOBILE APP FOR BACOLOD CITY',
                 cover: 'images/35.png',
                 images: [
@@ -37,7 +37,7 @@
                 ]
             },
             {
-                title: 'Web development project',
+                title: 'Node.js JavaScript, Express.js, MongoDB, EJS, HTML, CSS, Bootstrap',
                 description: 'Geographic Information System for the City of Silay LGU',
                 cover: 'images/22.png',
                 images: [
