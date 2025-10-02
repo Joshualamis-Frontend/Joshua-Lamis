@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JOSHUA LAMIS - FRONTEND DEVELOPER</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="project.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
@@ -58,13 +59,14 @@
                 data-aos-easing="ease-in-sine" data-aos-duration="1500">
                     <h2 class="card-title">HI THERE, I'M JOSHUA</h2>
                     <p class="card-text">
-                        I specialize in frontend development, crafting dynamic, visually engaging, and highly responsive websites that provide seamless user experiences. With a strong foundation in  <span style="color: #76b0ab;">HTML, CSS, and JavaScript</span>, I focus on building modern web interfaces that are not only aesthetically appealing but also optimized for performance and accessibility. My expertise extends to advanced frameworks like  <span style="color: #76b0ab;">REACT, TAILWIND CSS, NEXT.JS, REACT NATIVE, NATIVEWIND</span>, enabling me to create interactive, scalable, and efficient applications. Whether it's designing sleek UI components, implementing smooth animations, or enhancing user interactions, my goal is to develop web solutions that are both functional and innovative.
-                    </p>
+    I specialize in frontend development, crafting dynamic, visually engaging, and highly responsive websites that provide seamless user experiences. With a strong foundation in <span style="color: #76b0ab;">HTML, CSS, and JavaScript</span>, I focus on building modern web interfaces that are not only aesthetically appealing but also optimized for performance and accessibility. My expertise extends to advanced frameworks like <span style="color: #76b0ab;">REACT, TAILWIND CSS, NEXT.JS, REACT NATIVE, NATIVEWIND</span>, enabling me to create interactive, scalable, and efficient applications. Whether it's designing sleek UI components, implementing smooth animations, or enhancing user interactions, my goal is to develop web solutions that are both functional and innovative. On the back-end, I leverage <span style="color: #76b0ab;">PHP, LARAVEL, and MySQL</span> to build secure, data-driven, and scalable applications that ensure smooth integration and reliable performance.
+</p>
+
 
                     <img src="images/gradient1.png" alt="" class="background-img">
 
                     <div class="model-box">
-                        <spline-viewer class="info-3D" url="https://prod.spline.design/zkwk8md7sy95St57/scene.splinecode"></spline-viewer>
+                        <spline-viewer class="info-3D" url="https://prod.spline.design/m5oP36aZe4-4298b/scene.splinecode"></spline-viewer>
                     </div>
                 </div>
                 
@@ -74,8 +76,9 @@
                 data-aos-easing="ease-in-sine" data-aos-duration="1500">
                     <h2 class="card-title">TECH STACK</h2>
     <p class="card-text">
-        I specialize in a diverse range of programming languages, frameworks, and development tools that empower me to build robust, scalable, and high-performing applications. With a strong command of <span style="color: #76b0ab;">HTML, CSS, and JavaScript</span>, I create visually appealing and responsive web interfaces that enhance user engagement. My expertise extends to modern frameworks like <span style="color: #76b0ab;">REACT, REACT NATIVE, TAILWIND CSS, NATIVEWIND, NEXT.JS</span> and tools for 3D editing such as <span style="color: #76b0ab;">SPLINE</span>, enabling me to develop interactive, efficient, and maintainable front-end architectures across both web and mobile platforms.
-    </p>
+    I specialize in a diverse range of programming languages, frameworks, and development tools that empower me to build robust, scalable, and high-performing applications. With a strong command of <span style="color: #76b0ab;">HTML, CSS, and JavaScript</span>, I create visually appealing and responsive web interfaces that enhance user engagement. My expertise extends to modern frameworks like <span style="color: #76b0ab;">REACT, REACT NATIVE, TAILWIND CSS, NATIVEWIND, NEXT.JS</span> and tools for 3D editing such as <span style="color: #76b0ab;">SPLINE</span>, enabling me to develop interactive, efficient, and maintainable front-end architectures across both web and mobile platforms. On the back-end, I work with <span style="color: #76b0ab;">PHP, LARAVEL, and MySQL</span> to build secure, scalable, and data-driven applications that ensure seamless performance and integration.
+</p>
+
 
 
                     <h2 class="card-title">EDUCATION</h2>
@@ -85,10 +88,10 @@
 
                     <h2 class="card-title">WORK EXPERIENCE</h2>
                     <p class="card-text">
-                        <span style="color: #76b0ab;">FRONTEND DEVELOPER INTERN - CRAVE TECHNOLOGY ENTERPRISE FEBRUARY 2025 - JUNE 2025</span>
+                        <span style="color: #76b0ab;">FRONTEND - WEB DEVELOPER DEVELOPER INTERN - CRAVE TECHNOLOGY ENTERPRISE - FEBRUARY 2025 - JUNE 2025</span>
                     </p>
                     <p class="card-text">
-                        <span style="color: #76b0ab;">OUTSOURCED DOERS VIRTUAL ASSISTANCE MARKETING DESIGN MARCH 2025 - JULY 2025</span>
+                        <span style="color: #76b0ab;">OUTSOURCED DOERS VIRTUAL ASSISTANCE MARKETING DESIGN - MARCH 2025 - JULY 2025</span>
                     </p>
 
                     <img src="images/gradient 2.png" alt="" class="background-img">
@@ -125,21 +128,26 @@
             <h3 data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500">My Projects</h3>
+    <div class="container">
+        <p class="subtitle">Click on a project to view all images</p>
+        
+        <div class="gallery" id="gallery"></div>
+    </div>
 
-            <div class="slider" style="
-                --width: 60rem;
-                --height: 40rem;
-                --quantity: 4;
-            ">
-
-                <div class="list">
-                    <div class="item" style="--position: 1"><video id="projectVideo1" loop playsinline src="video/project-1.mp4"></video></div>
-
-                    <div class="item" style="--position: 2"><video id="projectVideo2" loop playsinline src="video/project-2.mp4"></video></div>
-
-                    <div class="item" style="--position: 3"><video id="projectVideo3" loop playsinline src="video/project-3.mp4"></video></div>
-
-                </div>
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">×</div>
+        <div class="zoom-hint">Click image to zoom</div>
+        <div class="nav-button prev" onclick="navigateImage(-1)">‹</div>
+        <div class="nav-button next" onclick="navigateImage(1)">›</div>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image" id="lightboxImage" onclick="toggleZoom()">
+        </div>
+        <div class="lightbox-info" id="lightboxInfo">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDesc"></p>
+        </div>
+    </div>
+           
 
             </div>
         </section>
@@ -221,5 +229,6 @@
         </script>
 
         <script src="app.js"></script>
+        <script src="proj.js"></script>
     </body>
     </html>
