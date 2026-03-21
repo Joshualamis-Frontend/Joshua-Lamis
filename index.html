@@ -3,25 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JOSHUA LAMIS - FRONTEND DEVELOPER</title>
+        <title>JOSHUA LAMIS - DEVELOPER</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="project.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
+
     <body>
         <header data-aos="fade-down"
         data-aos-easing="linear"
         data-aos-duration="1500">
             <div class="logo">JOSHUA LAMIS.</div>
-            <button class="contact-btn">Contact</button>
+            <a href="#contact" class="contact-btn">Contact</a>
         </header>
 
         <main>
             <div class="title-section" data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500">
-                <h1>FRONTEND DEVELOPER</h1>
+                <h1>WEB DEVELOPER</h1>
                 <h2>WEB DEV</h2>
                 <div class="location">
                     <p>BASED<br>In<br>SILAY CITY</p>
@@ -40,11 +41,10 @@
             <div class="scroll-down" data-aos="fade-up"
             data-aos-duration="1500"></div>
 
-            <spline-viewer data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0" data-aos-duration="3000" class="planet-3D"  url="https://prod.spline.design/5GeQ7R7lsgyNBbCH/scene.splinecode">
-            </spline-viewer>
+          <spline-viewer 
+    class="planet-3D lazy-spline"
+    data-url="https://prod.spline.design/5GeQ7R7lsgyNBbCH/scene.splinecode">
+</spline-viewer>
 
         </main>
 
@@ -107,7 +107,7 @@
                 </p>
                     <img src="images/gradient3&4.png" alt="" class="background-img">
 
-                    <button class="btn"><i class='bx bx-send'></i> CONTACT ME</button>
+                    <a href="#contact" class="btn"><i class='bx bx-send'></i> CONTACT ME</a>
                 </div>
 
                 <div class="card passion" data-aos="fade-up"
@@ -154,7 +154,7 @@
 
 
         <!-- CONTACT SECTION -->
-        <section class="contact-section" >
+        <section class="contact-section" id="contact">
             <div class="section-header" data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500">
@@ -208,7 +208,6 @@
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
 
 
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.79/build/spline-viewer.js"></script>
         
 
 
@@ -224,9 +223,48 @@
         </script>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+       <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const splines = document.querySelectorAll('.lazy-spline');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+
+        // Load the Spline scene
+        el.setAttribute('url', el.getAttribute('data-url'));
+
+        // Trigger smooth fade-in + scale
+        el.style.opacity = 1;
+        el.style.transform = 'scale(1)';
+
+        observer.unobserve(el);
+      }
+    });
+  });
+
+  splines.forEach(spline => observer.observe(spline));
+});
+</script>
+
         <script>
-        AOS.init();
-        </script>
+AOS.init({
+  duration: 800,
+  once: true,
+  easing: 'ease-out-cubic'
+});
+</script>
+
+<script>
+document.querySelector('.contact-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('contact').scrollIntoView({
+    behavior: 'smooth'
+  });
+});
+</script>
 
         <script src="app.js"></script>
         <script src="proj.js"></script>
