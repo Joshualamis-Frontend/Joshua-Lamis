@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JOSHUA LAMIS - DEVELOPER</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="project.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/project.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
@@ -16,6 +16,7 @@
         data-aos-duration="1500">
             <div class="logo">JOSHUA LAMIS.</div>
             <a href="#contact" class="contact-btn">Contact</a>
+            
         </header>
 
         <main>
@@ -33,7 +34,7 @@
             data-aos-duration="1500">
             <p class="bio">                
                 WITH <span style="color: #76b0ab;">OVER 2 YEARS</span> OF EXPERIENCE 
-                AS A <span style="color: #842626;">WEB/MOBILE DEVELOPER</span>, FROM COLLEGE UNTIL NOW, 
+                AS A <span style="color: #842626;">FRONTEND DEVELOPER</span>, FROM COLLEGE UNTIL NOW, 
                 CRAFTING SEAMLESS AND INTUITIVE USER EXPERIENCES.
             </p>        
             </div>
@@ -79,6 +80,9 @@
     I specialize in a diverse range of programming languages, frameworks, and development tools that empower me to build robust, scalable, and high-performing applications. With a strong command of <span style="color: #76b0ab;">HTML, CSS, and JavaScript</span>, I create visually appealing and responsive web interfaces that enhance user engagement. My expertise extends to modern frameworks like <span style="color: #76b0ab;">REACT, REACT NATIVE, TAILWIND CSS, NATIVEWIND, NEXT.JS</span> and tools for 3D editing such as <span style="color: #76b0ab;">SPLINE</span>, enabling me to develop interactive, efficient, and maintainable front-end architectures across both web and mobile platforms. On the back-end, I work with <span style="color: #76b0ab;">PHP, LARAVEL, and MySQL</span> to build secure, scalable, and data-driven applications that ensure seamless performance and integration.
 </p>
 
+<img src="images/gradient 2.png" alt="" class="background-img">
+                <img src="images/skills group.png" alt="" class="skills-group">
+
 
 
                     <h2 class="card-title">EDUCATION</h2>
@@ -88,11 +92,12 @@
 
                     <h2 class="card-title">WORK EXPERIENCE</h2>
                     <p class="card-text">
-                        <span style="color: #76b0ab;">Customer Service Representative - Healthcare - Feb 2023 - April 2024 </span>
+                        <span style="color: #76b0ab;">CRAVE TECHNOLOGY ENTERPRISE - Web/Mobile Developer - June 2024 – August 2025</span>
                     </p>
-                     <p class="card-text">
-                        <span style="color: #76b0ab;">CRAVE TECHNOLOGY ENTERPRISE Web/Mobile Developer - June 2024 – January 2026 </span>
+                    <p class="card-text">
+                        <span style="color: #76b0ab;">OUTSOURCED DOERS - Virtual Assistance Digital Marketing - October 2025 – February 2025</span>
                     </p>
+
                     <img src="images/gradient 2.png" alt="" class="background-img">
                     <img src="images/PP.jpg" alt="" class="skills-group">
                 </div>
@@ -124,32 +129,48 @@
 
 
         <section class="projects-section">
-            <h3 data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="1500">My Projects</h3>
-    <div class="container">
-        <p class="subtitle">Click on a project to view all images</p>
-        
-        <div class="gallery" id="gallery"></div>
+  <h3 data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">My Projects</h3>
+
+  <div class="container">
+
+    <!-- ===== PROJECT GALLERY GRID ===== -->
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Cards injected by JS -->
     </div>
 
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-close" onclick="closeLightbox()">×</div>
-        <div class="zoom-hint">Click image to zoom</div>
-        <div class="nav-button prev" onclick="navigateImage(-1)">‹</div>
-        <div class="nav-button next" onclick="navigateImage(1)">›</div>
-        <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-image" id="lightboxImage" onclick="toggleZoom()">
-        </div>
-        <div class="lightbox-info" id="lightboxInfo">
-            <h3 id="lightboxTitle"></h3>
-            <p id="lightboxDesc"></p>
-        </div>
-    </div>
-           
+  </div>
+</section>
 
-            </div>
-        </section>
+<!-- ===== GALLERY MODAL ===== -->
+<div class="modal-backdrop" id="galleryModal" role="dialog" aria-modal="true" aria-label="Project gallery">
+  <div class="modal-header">
+    <div>
+      <div class="modal-project-label" id="modalLabel"></div>
+      <div class="modal-project-name" id="modalName"></div>
+    </div>
+    <button class="modal-close" id="modalClose" aria-label="Close gallery">&#215;</button>
+  </div>
+  <div class="modal-body">
+    <div class="modal-grid" id="modalGrid"></div>
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close lightbox">&#215;</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image">&#8592;</button>
+  <div class="lightbox-img-wrap" id="lbImgWrap">
+    <img id="lbImg" src="" alt=""/>
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image">&#8594;</button>
+  <div class="lightbox-footer">
+    <div class="lightbox-counter" id="lbCounter"></div>
+    <div class="lightbox-dots" id="lbDots"></div>
+    <div class="lightbox-hint">click image to zoom &nbsp;·&nbsp; esc to close</div>
+  </div>
+</div>
 
 
         <!-- CONTACT SECTION -->
@@ -160,6 +181,23 @@
                 <h3>Get In Touch</h3>
                 <p>Have a project in mind or just want to say hello? Drop me a message</p>
             </div>
+
+            <div class="bento-grid">
+                <div class="card intro" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine" data-aos-duration="1500">
+                 <div class="contact-box">
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+                    <img src="images/gradient1.png" alt="" class="background-img">
+                </div>
 
             <div class="contact-grid" data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
@@ -186,8 +224,16 @@
 
                     <div class="social-link">
                         <p>Contacy with me</p>
-                        <a href="https://www.linkedin.com/in/joshua-lamis-777210368/">Linkedin</a>
-                        <a href="https://www.facebook.com/Joshuaolamis">Facebook</a>
+                        <div class="box-icons">
+                <a href="https://www.linkedin.com/in/joshua-lamis-777210368/"><i class='bx bxl-linkedin-square' ></i></a>
+            
+                        
+                        </div>
+                        <div class="fa-brands fa-facebook">
+                <a href="https://www.facebook.com/Joshuaolamis"><i class='fa-brands fa-facebook' ></i></a>
+            
+                        
+                        </div>
                     </div>
 
                 </div>
@@ -197,10 +243,7 @@
         </section>
 
         <footer>
-            <h3>©️2025, Made with ❤️ by Joshua Lamis</h3>
-            <div class="box-icons">
-                <a href="https://www.linkedin.com/in/joshua-lamis-777210368/"><i class='bx bxl-linkedin-square' ></i></a>
-            </div>
+            <h3>©️2025, Made by Joshua Lamis</h3>
         </footer>
 
 
@@ -222,6 +265,7 @@
         </script>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
        <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -263,9 +307,53 @@ document.querySelector('.contact-btn').addEventListener('click', function(e) {
     behavior: 'smooth'
   });
 });
+
+
+  document.getElementById("contact-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch("https://formspree.io/f/meenkrbk", {
+          method: "POST",
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Thanks! I will reply soon.',
+            timer: 2000,
+            showConfirmButton: false
+          });
+
+          form.reset();
+
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Failed to send message.'
+          });
+        }
+
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Network Error',
+          text: 'Please try again later.'
+        });
+      }
+    });
 </script>
 
         <script src="app.js"></script>
-        <script src="proj.js"></script>
+        <script src="js/proj.js"></script>
     </body>
     </html>
